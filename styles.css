@@ -1,0 +1,263 @@
+
+
+/* Fondo abstracto con figuras */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Figuras abstractas en el fondo con tonos de la bandera mexicana */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(144, 238, 144, 0.7), rgba(144, 238, 144, 0.2)); /* Verde claro */
+    z-index: -1;
+}
+
+/* Primer círculo grande en verde claro */
+body::before {
+    width: 500px;
+    height: 500px;
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle at center, rgba(144, 238, 144, 0.7), rgba(144, 238, 144, 0.2));
+}
+
+/* Segundo círculo en rojo claro */
+body::after {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    right: -150px;
+    background: radial-gradient(circle at center, rgba(255, 182, 193, 0.7), rgba(255, 182, 193, 0.2)); /* Rojo claro */
+}
+header {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    padding: 10px 30px; /* Ajustar padding superior e inferior */
+    background: linear-gradient(135deg, #007A33, #FFFFFF, #EF3340);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 0 10px;
+    height: 30px;
+}
+
+.header-icon {
+    width: 40px; /* Tamaño del ícono */
+    height: 40px; /* Tamaño del ícono */
+    margin-right: 15px; /* Espacio entre el ícono y el texto */
+    vertical-align: middle; /* Alinear verticalmente el ícono con el texto */
+}
+
+header h1 {
+    font-size: 2.0em; 
+    font-weight: 700; 
+    color: white; /* Cambia el color del texto a blanco para que resalte */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); 
+    margin: 0 auto; /* Centra el texto */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    flex: 1;
+    
+}
+
+/* Estilo de las tarjetas de ciudades */
+.city-card {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px; /* Ajusta el padding a un valor menor */
+    margin: 10px; /* Espaciado entre tarjetas */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: auto; /* Permite que el ancho se ajuste al contenido */
+    max-width: 250px; /* Opcional: puedes establecer un máximo si lo deseas */
+}
+
+.city-card:hover {
+    transform: translateY(-5px); /* Cambia el movimiento al pasar el mouse */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+.city-card h2 {
+    color: #4A90E2;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.city-card .time {
+    font-size: 2.5em;
+    color: #333;
+    margin: 10px 0;
+}
+.city-card .day {
+    margin-bottom: 0; /* Elimina el margen inferior */
+    text-transform: capitalize;
+}
+.city-card .date {
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 2px; /* Elimina el margen superior */
+}
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2)); /* Agrega una sombra suave */
+    
+}
+
+.weather-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+/* Icono del termómetro */
+.thermometer-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; /* Espacio entre el ícono y la temperatura */
+    vertical-align: middle; /* Alinear el ícono al medio del texto */
+}
+/* Estilo de la temperatura */
+.temperature {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+
+/* Contenedor general del footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacia los elementos al máximo */
+    padding: 15px;
+    color: white;
+}
+/* Ícono de noticia */
+.news-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px; /* Espacio entre el ícono y el banner */
+}
+
+/* Banner de noticias */
+.news-banner {
+    overflow: hidden; /* Oculta lo que sale del contenedor */
+    position: relative;
+    width: 100%;
+    height: 20px; /* Ajusta la altura */
+    background-color: #2C3E50;
+    padding: 15px;
+    color: white;
+}
+
+/* Contenido que se desplaza */
+.news-content {
+    display: flex;
+    white-space: nowrap;
+    color: #efffe9;
+}
+
+
+.news-content p {
+    margin: 0;
+    display: inline-block;
+    padding-right: 100%; /* Espacio adicional */
+    padding: 0;
+    animation: scrollText linear infinite;
+    font-size: 18px; /* O un valor que prefieras */
+    font-weight: bold; /* Esto hará que los titulares se vean más importantes */
+}
+
+/* Animación BOTON*/
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Mueve todo el contenido */
+    }
+}
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #7A9EFA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté siempre por encima del contenido */
+  }
+  
+  .floating-button.dark-mode {
+    background-color: #555;
+    color: #fff;
+  }
+  /* Estilos del modo claro (ya existentes) - no se cambian */
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  .card.dark-mode {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  }
+  
+  .header.dark-mode {
+    background-color: #1b1b1b;
+    color: #ffffff;
+  }
+  
+  .footer.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  #theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #theme-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dark-mode #theme-icon {
+    transform: rotate(180deg); /* Añade un giro suave al cambiar el ícono */
+  }
+  
+  #theme-toggle.dark-mode {
+    background-color: #555;
+    color: #fff;
+  }
+
